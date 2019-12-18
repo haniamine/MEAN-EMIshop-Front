@@ -1,0 +1,16 @@
+<div>
+<img (click)="onSelect()" [src]="product.url" alt="">
+<p>name :{{product.name}} </p>
+<p>code : {{product.code}}</p>
+<p>prix : {{product.prix}}</p>
+<p>desc :{{product.desc}}</p>
+  <p *ngIf="product.isDisponible"  [ngStyle]="{'color': 'green'}">{{etat()}}</p>
+  <p  *ngIf="!product.isDisponible" [ngStyle]="{'color': 'red'}">{{etat()}}</p>
+    <button MatButtonModule color="primary" (click)="onSelect()" *ngIf="product.isDisponible">Ajouter au panier</button>
+  <button MatButtonModule (click)="changeetat()">etat</button>
+<button MatButtonModule (click)="like()">like</button>
+<button (click)="dislike()">dislike</button>
+  <a [routerLink]="product.code">detail</a>
+<p>{{counter}}</p>
+
+</div>

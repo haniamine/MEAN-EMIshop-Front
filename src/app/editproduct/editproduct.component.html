@@ -1,0 +1,14 @@
+<div>
+  <img (click)="onSelect()" [src]="product.url" alt="">
+  <p>name :{{product.name}} </p>
+  <p>code : {{product.code}}</p>
+  <p>prix : {{product.prix}}</p>
+  <p>desc :{{product.desc}}</p>
+
+  <button (click)="onSelect()" *ngIf="product.isDisponible">Ajouter au panier</button>
+  <button (click)="changeetat()">etat</button>
+  <button (click)="like()">like</button>
+  <button (click)="dislike()">dislike</button>
+  <p>{{counter}}</p>
+</div>
+
