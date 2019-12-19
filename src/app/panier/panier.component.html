@@ -14,7 +14,7 @@
     <td><button (click)=addQte(item)>+</button></td>
     <td><button (click)=minQte(item)>-</button></td>
   </tr></table>-->
-
+<div>
   <table mat-table [dataSource]="panier">
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Name. </th>
@@ -35,4 +35,5 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+</div>
 <router-outlet></router-outlet>

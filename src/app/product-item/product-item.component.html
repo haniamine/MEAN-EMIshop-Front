@@ -1,16 +1,26 @@
-<div>
-<img (click)="onSelect()" [src]="product.url" alt="">
-<p>name :{{product.name}} </p>
-<p>code : {{product.code}}</p>
-<p>prix : {{product.prix}}</p>
-<p>desc :{{product.desc}}</p>
-  <p *ngIf="product.isDisponible"  [ngStyle]="{'color': 'green'}">{{etat()}}</p>
-  <p  *ngIf="!product.isDisponible" [ngStyle]="{'color': 'red'}">{{etat()}}</p>
-    <button MatButtonModule color="primary" (click)="onSelect()" *ngIf="product.isDisponible">Ajouter au panier</button>
-  <button MatButtonModule (click)="changeetat()">etat</button>
-<button MatButtonModule (click)="like()">like</button>
-<button (click)="dislike()">dislike</button>
-  <a [routerLink]="product.code">detail</a>
-<p>{{counter}}</p>
+<div class="row">
+  <div  class="col-12 col-md-5 m-1">
+  <mat-card class="card">
+    <mat-card-header>
+    <mat-card-title>{{product.name}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image class="cardimg" (click)="onSelect()" [src]="product.url" alt="">
+    <mat-card-content>
+      <p>code : {{product.code}}</p>
+      <p>prix : {{product.prix}}</p>
+      <p>desc :{{product.desc}}</p>
+      <p *ngIf="product.isDisponible"  [ngStyle]="{'color': 'green'}">{{etat()}}</p>
+      <p  *ngIf="!product.isDisponible" [ngStyle]="{'color': 'red'}">{{etat()}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button  color="primary" (click)="onSelect()" *ngIf="product.isDisponible">Ajouter au panier</button>
+      <button mat-stroked-button  (click)="changeetat()">etat</button>
+      <button mat-stroked-button  (click)="like()">like</button>
+      <button mat-stroked-button (click)="dislike()">dislike</button>
+      <a mat-stroked-button [routerLink]="product.code">detail</a>
+      <p>{{counter}}</p>
+    </mat-card-actions>
+  </mat-card>
+  </div>
+</div><br>
 
-</div>
