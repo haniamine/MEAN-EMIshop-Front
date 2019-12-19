@@ -14,7 +14,9 @@
     <td><button (click)=addQte(item)>+</button></td>
     <td><button (click)=minQte(item)>-</button></td>
   </tr></table>-->
-<div>
+<div class="modal">
+  <div class="modal-header"><p>Panier</p></div>
+  <div class="modal-content">
   <table mat-table [dataSource]="panier">
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Name. </th>
@@ -43,4 +45,5 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 </div>
-<router-outlet></router-outlet>
+</div>
+

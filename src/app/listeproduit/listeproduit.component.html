@@ -1,4 +1,5 @@
-<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
-  <app-product-item *ngFor="let produit of produits" (productselected)="affiche($event)"  [product]="produit">
-  </app-product-item>
+<mat-slider min="1" max="100" step="1" value="10"></mat-slider>
+<div class="row">
+<app-product-item  *ngFor="let produit of produits" (productselected)="affiche($event)"  [product]="produit">
+  </app-product-item></div>
 <router-outlet></router-outlet>

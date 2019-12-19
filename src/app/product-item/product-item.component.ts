@@ -1,7 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-
 import Product from "../model/Product";
 import {PanierService} from "../services/panier.service";
+import {MatDialog} from "@angular/material";
+import {PanierComponent} from "../panier/panier.component";
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
@@ -11,7 +12,14 @@ export class ProductItemComponent implements OnInit {
 
   counter:number=0;
   @Input() product :Product;
-  constructor(private panierService:PanierService) {
+  constructor(private panierService:PanierService,public dialog:MatDialog) {
+  }
+  openDialog():void{
+    const dialogConfig = this.dialog.open(PanierComponent,{
+      width:'500px',
+      height:'700px'
+    })
+
   }
   ngOnInit() {
   }
