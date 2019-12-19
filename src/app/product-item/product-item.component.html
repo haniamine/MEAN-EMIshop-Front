@@ -13,7 +13,7 @@
       <p  *ngIf="!product.isDisponible" [ngStyle]="{'color': 'red'}">{{etat()}}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-stroked-button  color="primary" (click)="onSelect()" *ngIf="product.isDisponible">Ajouter au panier</button>
+      <button mat-flat-button  color="primary" (click)="onSelect()" *ngIf="product.isDisponible">Ajouter au panier</button>
       <button mat-stroked-button  (click)="changeetat()">etat</button>
       <button mat-stroked-button  (click)="like()">like</button>
       <button mat-stroked-button (click)="dislike()">dislike</button>

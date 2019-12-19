@@ -11,7 +11,7 @@ import {ɵparseCookieValue} from "@angular/common";
 })
 export class PanierComponent implements OnInit {
   panier :Array<PanierItem>;
-  displayedColumns: string[] = ['name', 'price', 'desc'];
+  displayedColumns: string[] = ['name', 'price', 'desc','qte'];
   constructor(private panierService: PanierService) { }
 
   ngOnInit() {

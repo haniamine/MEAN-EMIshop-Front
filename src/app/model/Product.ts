@@ -6,6 +6,7 @@ export default class Product{
   name:string;
   desc :string;
   url: string;
+  qte:number = 0;
   isDisponible:boolean=true;
 
   constructor(code:string,prix:number,name:string,desc:string,isDisponible:boolean,url:string){

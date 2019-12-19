@@ -24,4 +24,7 @@ export class PanierService {
   mqte (p:PanierItem):void{
     this.panier[this.panier.indexOf(p)].qte-=1;
   }
+  get (p:PanierItem):PanierItem{
+    return this.panier[this.panier.indexOf(p)]
+  }
 }

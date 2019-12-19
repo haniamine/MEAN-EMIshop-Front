@@ -30,7 +30,6 @@ export class ProductItemComponent implements OnInit {
   }
  @Output()  productselected = new EventEmitter<Product>();
   onSelect(){
-    this.productselected.emit(this.product);
     this.panierService.add(this.product);
   }
 
