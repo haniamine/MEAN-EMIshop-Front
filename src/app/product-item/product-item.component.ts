@@ -14,13 +14,7 @@ export class ProductItemComponent implements OnInit {
   @Input() product :Product;
   constructor(private panierService:PanierService,public dialog:MatDialog) {
   }
-  openDialog():void{
-    const dialogConfig = this.dialog.open(PanierComponent,{
-      width:'500px',
-      height:'700px'
-    })
 
-  }
   ngOnInit() {
   }
   etat():string{
