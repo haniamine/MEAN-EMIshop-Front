@@ -1,0 +1,38 @@
+<div class="container" id="cover">
+  <div class="row mt-5">
+    <div class="col-5 bg-dark">
+      <img
+        [src]="productService.selectedItem.picUrl"
+        class="card-img-top"
+        alt="..."
+      />
+    </div>
+    <div class="col-5 offset-1">
+      <h1 style="font-family: bebas neue;font-size: 110px;">{{ productService.selectedItem.title }}</h1>
+      <h2 style="font-weight:bold;margin-top: -10px;">Price: <span class="offset-5" style="font-size: 50px;">{{ productService.selectedItem.price }}€</span></h2>
+      <h3 ><b>Description:</b> <br></h3>
+      <h3><span class="mt-2">{{ productService.selectedItem.description }}</span></h3>
+      <div class="row mt-5">
+        <div class="col-1 mt-2">
+          <button mat-raised-button (click)="onSelect()">
+            Ajouter Au panier
+          </button>
+        </div>
+        <div class="col-1 offset-3 mt-2">
+          <i
+            class="btn btn-outline-success fa fa-thumbs-up"
+            aria-hidden="true"
+            (click)="like(product)"
+          ></i>
+        </div>
+        <div class="col mt-2">
+          <i
+            class="btn btn-outline-danger fa fa-thumbs-down"
+            aria-hidden="true"
+            (click)="dislike(product)"
+          ></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

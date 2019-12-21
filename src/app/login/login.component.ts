@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from "@angular/material";
 import {InscriptionComponent} from "../inscription/inscription.component";
+import {UserService} from "../shared/services/user.service";
+import Login from '../shared/model/Login';
 
 @Component({
   selector: 'app-login',
@@ -9,11 +11,15 @@ import {InscriptionComponent} from "../inscription/inscription.component";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public dialog:MatDialog) { }
+  constructor(public dialog:MatDialog,private userService: UserService) { }
   inscription():void{
     event.preventDefault();
     const dialogConfig = this.dialog.open(InscriptionComponent,{
     })}
+    login(login:Login){
+      this.userService.login(login);
+      console.log(localStorage.getItem('token'))
+    }
   ngOnInit() {
   }
 

@@ -14,7 +14,6 @@ export class InscriptionComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit(user:User){
-    console.log(user)
-    this.userService.post(user);
+    this.userService.register(user);
   }
 }

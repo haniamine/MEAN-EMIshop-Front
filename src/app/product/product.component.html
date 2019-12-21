@@ -11,7 +11,7 @@
         <i
           class="btn btn-outline-success fa fa-thumbs-up"
           aria-hidden="true"
-          (click)="like()"
+          (click)="like(product)"
         ></i>
         {{ product.like }}
       </div>
@@ -19,7 +19,7 @@
         <i
           class="btn btn-outline-danger fa fa-thumbs-down"
           aria-hidden="true"
-          (click)="dislike()"
+          (click)="dislike(product)"
         ></i>
         {{ product.dislike }}
       </div>
@@ -27,7 +27,7 @@
 
     <div class="m-3">
       <button mat-raised-button (click)="onSelect()">Ajouter Au panier</button>
-      <a mat-stroked-button [routerLink]="product._id" class="m-3">Plus de Détails</a>
+      <a mat-stroked-button [routerLink]="['/details', product._id]" class="m-3">Plus de Détails</a>
     </div>
   </div>
 </div>

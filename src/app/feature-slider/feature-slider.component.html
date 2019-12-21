@@ -72,8 +72,8 @@
                   <h2>
                     <span style="font-family: bebas neue;font-size: 50px;">{{product.price}}€</span><small class="ml-3 font-weight-bold"><del>{{product.price *1.25}}€</del></small>
                   </h2>
-                  <button mat-raised-button color="primary" (click)="onSelect()">Ajouter Au panier</button>
-      <a mat-raised-button color="accent"  [routerLink]="product._id" class="m-3">Plus de Détails</a>
+                  <button mat-raised-button color="primary" (click)="onSelect(product)">Ajouter Au panier</button>
+      <a mat-raised-button color="accent"   [routerLink]="['/details', product._id]" class="m-3">Plus de Détails</a>
             </div></div>
         </ng-template>
       </ngb-carousel>

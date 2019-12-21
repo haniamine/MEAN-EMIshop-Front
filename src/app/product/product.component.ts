@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 import Product from '../shared/model/Product';
 import { PanierService } from '../shared/services/panier.service';
 import { MatDialog } from '@angular/material';
+import { ProductService } from '../shared/services/product.service';
 
 @Component({
   selector: 'app-product',
@@ -11,7 +12,7 @@ import { MatDialog } from '@angular/material';
 export class ProductComponent implements OnInit {
 
   @Input() product :Product;
-  constructor(private panierService:PanierService,public dialog:MatDialog) {
+  constructor(private panierService:PanierService,private productService:ProductService,public dialog:MatDialog) {
   }
 
   ngOnInit() {
@@ -24,16 +25,15 @@ export class ProductComponent implements OnInit {
   changeetat():void{
     //this.product.isDisponible=!this.product.isDisponible;
   }
-  like():void{
-    //this.counter++;
-    alert("liked")
+  like(prod:Product){
+    let id= prod._id
+    return this.productService.putLike(id);
   }
-  dislike():void{
-    alert("disliked")
+  dislike(prod:Product){
+    return this.productService.putDislike(prod)
   }
   onSelect(){
     this.panierService.add(this.product);
-    alert("ajouté au panier!")
   }
 
 }

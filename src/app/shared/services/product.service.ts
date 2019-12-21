@@ -28,7 +28,7 @@ export class ProductService {
       .then(res => (this.selectedItem = res as Product));
   }
 
-  postFilm(product: Product) {
+  postProduct(product: Product) {
     return this.http.post(this.baseURL, product);
   }
 
@@ -38,5 +38,14 @@ export class ProductService {
 
   deleteProduct(id: string) {
     return this.http.delete(this.baseURL + `/${id}`);
+  }
+
+  //like & dislike
+  putLike(id) {
+    return this.http.put(this.baseURL + `/like/${id}`,id);
+
+  }
+  putDislike(product: Product) {
+    return this.http.put(this.baseURL+`/dislike` + `/${product._id}`,product);
   }
 }

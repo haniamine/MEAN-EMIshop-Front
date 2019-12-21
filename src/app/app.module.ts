@@ -32,6 +32,7 @@ import { CatalogueComponent } from './catalogue/catalogue.component';
 import { ProductComponent } from './product/product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -52,7 +53,8 @@ const appRoutes: Routes = [
     HomeComponent,
     CatalogueComponent,
     ProductComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    ProductDetailsComponent
   ],
   bootstrap: [AppComponent],
   imports: [
