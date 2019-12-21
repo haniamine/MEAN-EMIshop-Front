@@ -31,10 +31,12 @@ import { HomeComponent } from './home/home.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { ProductComponent } from './product/product.component';
 import { HttpClientModule } from '@angular/common/http';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
-  { path: "catalogue", component: CatalogueComponent }];
+  { path: "catalogue", component: CatalogueComponent },
+  { path :"inscription", component: InscriptionComponent}];
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +51,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     HomeComponent,
     CatalogueComponent,
-    ProductComponent
+    ProductComponent,
+    InscriptionComponent
   ],
   bootstrap: [AppComponent],
   imports: [
@@ -70,12 +73,13 @@ const appRoutes: Routes = [
     MatTableModule,
     NgbModule,
     MatMenuModule,
+    HttpClientModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule
   ],
   providers: [],
-  entryComponents: [PanierComponent, LoginComponent]
+  entryComponents: [PanierComponent, LoginComponent,InscriptionComponent]
 })
 export class AppModule {}

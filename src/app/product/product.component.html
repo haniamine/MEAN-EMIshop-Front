@@ -6,6 +6,7 @@
     <p class="card-text">{{ product.description }}</p>
     <h2 class="card-title font-weight-bold">{{ product.price }}€</h2>
 
+<<<<<<< HEAD
     <div class="row">
       <div class="col-3 offset-3 mt-2">
         <i
@@ -27,6 +28,25 @@
 
     <div class="mt-3">
       <button mat-raised-button (click)="onSelect()">Ajouter Au panier</button>
+=======
+  <div class="card text-center">
+    <img
+    [src]="product.picUrl"
+      class="card-img-top"
+      alt="..."
+    />
+    <div class="card-body">
+      <h2 class="card-title">{{product.title}}</h2>
+      <h5>Categorie: {{product.categorie}}</h5>
+      <p class="card-text">{{product.desc}}</p>
+      <h2 class="card-title font-weight-bold">{{product.price}}€</h2>
+
+      <div class="row">
+        <div class="col-12"><button class="btn btn-primary" (click)="onSelect()">Ajouter au Panier</button></div>
+          <div class="col-3 offset-3 mt-2"><i class="btn btn-outline-success fa fa-thumbs-up" aria-hidden="true"></i> {{product.like}}</div>
+          <div class="col-3 mt-2"><i class="btn btn-outline-danger fa fa-thumbs-down" aria-hidden="true"></i> {{product.dislike}}</div></div>
+
+>>>>>>> 65025e09959ffd7a297c1112a8fdfde569de53bf
       <a mat-stroked-button [routerLink]="product._id">Plus de Détails</a>
     </div>
   </div>
