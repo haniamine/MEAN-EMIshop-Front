@@ -1,23 +1,24 @@
-<p>panier works!</p>
-<div class="modal">
+
+<div>
+  <p>panier works!</p>
   <div class="modal-header"><p>Panier</p></div>
   <div class="modal-content">
   <table mat-table [dataSource]="panier">
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Name. </th>
-      <td mat-cell *matCellDef="let element"> {{element.product.name}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.product.title}} </td>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="price">
       <th mat-header-cell *matHeaderCellDef> Price </th>
-      <td mat-cell *matCellDef="let element"> {{element.product.prix}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.product.price}} </td>
     </ng-container>
 
     <!-- Weight Column -->
     <ng-container matColumnDef="desc">
       <th mat-header-cell *matHeaderCellDef> Weight </th>
-      <td mat-cell *matCellDef="let element"> {{element.product.desc}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.product.description}} </td>
     </ng-container>
     <ng-container matColumnDef="qte">
       <th mat-header-cell *matHeaderCellDef> qte </th>
