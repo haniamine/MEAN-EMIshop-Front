@@ -14,8 +14,8 @@ export class LoginComponent implements OnInit {
   constructor(public dialog: MatDialog, private userService: UserService) { }
   inscription(): void {
     event.preventDefault();
-    const dialogConfig = this.dialog.open(InscriptionComponent, {})}
-    login(login: Login ) {
+    const dialogConfig = this.dialog.open(InscriptionComponent, {}); }
+   login(login: Login ) {
       const res: any = this.userService.login(login);
       console.log(res);
       if (res !== 0) { this.dialog.closeAll(); }
