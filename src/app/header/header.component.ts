@@ -14,10 +14,14 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-  openDialog():void{
+
+  openDialog($event: MouseEvent):void{
+    $event.preventDefault();
     const dialogConfig = this.dialog.open(LoginComponent,{
     })}
-  openPanier():void{
+
+  openPanier($event: MouseEvent):void{
+    $event.preventDefault();
     const dialogpanier = this.dialog.open(PanierComponent,{
       width:'500px',
       height:'700px'
