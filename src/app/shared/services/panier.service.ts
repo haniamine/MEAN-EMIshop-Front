@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import Product from "../model/Product";
 import PanierItem from "../model/PanierItem";
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PanierService {
   panier: Array<PanierItem>=[];
-  constructor() { }
+  constructor(private http: HttpClient) { }
   getAll():Array<PanierItem>{
     return this.panier;
   }
@@ -27,4 +28,5 @@ export class PanierService {
   get (p:PanierItem):PanierItem{
     return this.panier[this.panier.indexOf(p)]
   }
-}
+  command(commande: any) {
+    this.http.post('http://127.0.0.1:3000/api/command/', commande).subscribe(c => console.log(c)); }}
