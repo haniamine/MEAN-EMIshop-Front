@@ -1,7 +1,5 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { ListeproduitComponent } from './Old/listeproduit/listeproduit.component';
-import { EditproductComponent } from './Old/editproduct/editproduct.component';
 import { PanierComponent } from './panier/panier.component';
 import { HomeComponent } from './home/home.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';

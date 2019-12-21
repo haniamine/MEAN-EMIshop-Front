@@ -3,7 +3,6 @@ import { NgModule } from "@angular/core";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { ListeproduitComponent } from "./Old/listeproduit/listeproduit.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 import { NgxNavbarModule } from "ngx-bootstrap-navbar";
@@ -32,15 +31,14 @@ import { HomeComponent } from './home/home.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { OldHomeComponent } from './old-home/old-home.component';
 import { ProductComponent } from './product/product.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
-  { path: "old", component: ListeproduitComponent},
   { path: "catalogue", component: CatalogueComponent }];
 @NgModule({
   declarations: [
     AppComponent,
-    ListeproduitComponent,
     NavBarComponent,
     EditproductComponent,
     PanierComponent,
@@ -76,7 +74,8 @@ const appRoutes: Routes = [
     MatMenuModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
   ],
   providers: [],
   entryComponents: [PanierComponent, LoginComponent]

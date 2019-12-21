@@ -14,11 +14,17 @@ export class ProductGridComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.produits=this.productService.getAll();
+    this.productService.getAll()
     }
     affiche(data: Product){
       alert('le produit: a ete ajouter au panier');}
 
-
+      onDelete(id: string) {
+        if (confirm("Are you sure to delete this record?")) {
+          this.productService.deleteProduct(id).subscribe(res => {
+            this.productService.getAll();
+          });
+        }
+      }
 
 }
