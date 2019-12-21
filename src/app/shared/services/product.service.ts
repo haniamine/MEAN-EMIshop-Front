@@ -1,27 +1,34 @@
 import { Injectable } from "@angular/core";
 import Product from "../model/Product";
-import { HttpClient } from '@angular/common/http';
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: "root"
 })
 export class ProductService {
-
   selectedItem: Product;
   produits: Product[];
-  readonly baseURL = 'http://localhost:3000/api/product';
+  sliderProduct: Product[];
+  readonly baseURL = "http://localhost:3000/api/product";
 
   constructor(private http: HttpClient) {}
 
-
-
-  getAll(){
-    this.http.get(this.baseURL)
-    .toPromise().then(res => this.produits = res as Product[]);
+  getAll() {
+    this.http
+      .get(this.baseURL)
+      .toPromise()
+      .then(res => (this.produits = res as Product[]));
   }
-  getById(id:string){
-    this.http.get(this.baseURL+ `/${id}`)
-    .toPromise().then(res => this.selectedItem = res as Product);
+
+  getSlider() {
+    this.getAll();
+    this.sliderProduct = this.produits;
+  }
+  getById(id: string) {
+    this.http
+      .get(this.baseURL + `/${id}`)
+      .toPromise()
+      .then(res => (this.selectedItem = res as Product));
   }
 
   postFilm(product: Product) {
@@ -35,5 +42,4 @@ export class ProductService {
   deleteProduct(id: string) {
     return this.http.delete(this.baseURL + `/${id}`);
   }
-
 }

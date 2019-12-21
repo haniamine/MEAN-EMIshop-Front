@@ -26,9 +26,10 @@ export class ProductComponent implements OnInit {
   }
   like():void{
     //this.counter++;
+    alert("liked")
   }
   dislike():void{
-    //this.counter--;
+    alert("disliked")
   }
   onSelect(){
     this.panierService.add(this.product);

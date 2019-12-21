@@ -3,7 +3,7 @@ import { isBoolean } from "util";
 export default class Product {
   _id: string;
   title: string;
-  desc: string;
+  description: string;
   price: number;
   like: number;
   dislike: number;
@@ -13,7 +13,7 @@ export default class Product {
   constructor(
     _id: string,
     title: string,
-    desc: string,
+    description: string,
     price: number,
     like: number,
     dislike: number,
@@ -22,7 +22,7 @@ export default class Product {
   ) {
     this._id = _id;
     this.title = title;
-    this.desc = desc;
+    this.description = description;
     this.price = price;
     this.like = like;
     this.dislike = dislike;
