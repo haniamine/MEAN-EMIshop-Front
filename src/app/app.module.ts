@@ -29,7 +29,6 @@ import { FooterComponent } from "./footer/footer.component";
 import { HeaderComponent } from "./header/header.component";
 import { HomeComponent } from './home/home.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
-import { OldHomeComponent } from './old-home/old-home.component';
 import { ProductComponent } from './product/product.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -50,7 +49,6 @@ const appRoutes: Routes = [
     HeaderComponent,
     HomeComponent,
     CatalogueComponent,
-    OldHomeComponent,
     ProductComponent
   ],
   bootstrap: [AppComponent],
