@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from "@angular/material";
-import {InscriptionComponent} from "../../inscription/inscription.component";
+import {InscriptionComponent} from "../inscription/inscription.component";
 
 @Component({
   selector: 'app-login',

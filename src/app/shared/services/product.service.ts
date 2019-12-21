@@ -17,12 +17,9 @@ export class ProductService {
     this.http
       .get(this.baseURL)
       .toPromise()
-      .then(res => (this.produits = res as Product[]));
-  }
+      .then(res => (this.produits = res as Product[]))
+      .then(res => (this.sliderProduct = this.produits.slice(0,Math.min(3,this.produits.length))));
 
-  getSlider() {
-    this.getAll();
-    this.sliderProduct = this.produits;
   }
   getById(id: string) {
     this.http

@@ -1,8 +1,8 @@
 <form [formGroup]="loginForm">
 
 
-  <div class="example-container">
-    <h2 style="font-weight: 100; text-align: center;">Please sign in</h2>
+  <div class="login-container">
+    <h1 style="font-weight: 100; text-align: center;"> Sign in</h1>
 
     <mat-form-field appearance="outline">
       <mat-label>Username</mat-label>
@@ -16,7 +16,7 @@
         <input type="password" matInput formControlName="password" placeholder="Enter Password">
       </label>
     </mat-form-field>
-    <button mat-button mat-raised-button color="primary" class="buy-now-button space" (click)="login()">LOGIN
+    <button mat-raised-button color="primary" class="buy-now-button space" (click)="login()">LOGIN
     </button>
 
 

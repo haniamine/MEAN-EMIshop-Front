@@ -12,13 +12,13 @@
       </div>
     </div>
   </div>
-</div>---------->
+</div>
 
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+ Include the above in your HEAD tag
 
 <link href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" rel="stylesheet">
 
@@ -26,7 +26,7 @@
   <div class="carousel-inner">
 
     <div  *ngFor="let product of productService.produits" >
-      <div class="carousel-item active offset-1">
+      <div class="carousel-item offset-1" [class.active]="activate()">
         <div class="mask flex-center">
           <div class="container">
             <div class="row align-items-center">
@@ -52,9 +52,30 @@
     <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
 </div>
-<!--slide end-->
+
 
 
 <script> $('#myCarousel').carousel({
   interval: 4000,
 })</script>
+-->
+
+  <div class="row bg-dark" >
+    <div class="col-md-12 py-3">
+      <ngb-carousel *ngIf="productService.sliderProduct" style="outline : none;">
+        <ng-template ngbSlide *ngFor="let product of productService.sliderProduct" >
+          <div class="row">
+            <img [src]="product.picUrl" class="card-img-top col-4 offset-2" alt="Random slide">
+            <div class="carousel-caption col-4 offset-3">
+              <h1 style="font-family: bebas neue;font-size: 50px;">{{product.title}}</h1>
+                  <p>{{product.description}}</p>
+                  <h2>
+                    <span style="font-family: bebas neue;font-size: 50px;">{{product.price}}€</span><small class="ml-3 font-weight-bold"><del>{{product.price *1.25}}€</del></small>
+                  </h2>
+                  <button mat-raised-button color="primary" (click)="onSelect()">Ajouter Au panier</button>
+      <a mat-raised-button color="accent"  [routerLink]="product._id" class="m-3">Plus de Détails</a>
+            </div></div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>

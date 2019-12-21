@@ -22,7 +22,7 @@ import { MatSliderModule } from "@angular/material/slider";
 import { MatTableModule } from "@angular/material";
 import { PanierComponent } from "./panier/panier.component";
 import { MenuComponent } from "./Old/menu/menu.component";
-import { LoginComponent } from "./Old/login/login.component";
+import { LoginComponent } from "./login/login.component";
 import { FeatureSliderComponent } from "./feature-slider/feature-slider.component";
 import { ProductGridComponent } from "./product-grid/product-grid.component";
 import { FooterComponent } from "./footer/footer.component";
