@@ -12,6 +12,7 @@ import User from '../shared/model/User';
   styleUrls: ['./panier.component.scss']
 })
 export class PanierComponent implements OnInit {
+  total = 0;
   user: string = null;
   panier : Array <PanierItem>;
 displayedColumns: string[] = ['name', 'price', 'desc', 'qte'];
@@ -19,12 +20,17 @@ constructor(private panierService: PanierService, private userService: UserServi
 
 ngOnInit() {
     this.panier = this.panierService.getAll();
+    this.panier.map((c) => this.total += c.product.price * c.qte);
   }
 addQte(p: PanierItem) {
     this.panierService.aqte(p);
+    this.total = 0;
+    this.panier.map((c) => this.total += c.product.price * c.qte);
   }
 minQte(p: PanierItem) {
     this.panierService.mqte(p);
+    this.total = 0;
+    this.panier.map((c) => this.total += c.product.price * c.qte);
 
   }
 commander() {
@@ -35,7 +41,7 @@ commander() {
     products[i] = this.panier[i].product._id;
   }
   const user = this.userService.user();
-  const total = 0;
+  const total = this.total;
   const commande = {
     user,
     quantity,

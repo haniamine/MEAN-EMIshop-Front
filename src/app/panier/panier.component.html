@@ -30,6 +30,7 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+    <label style="background-color: #1a1a1a" >total = {{total}}</label>
     <button mat-raised-button color="accent" (click)="commander()">commander</button>
 </div>
 </div>
