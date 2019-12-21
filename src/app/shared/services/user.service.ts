@@ -13,14 +13,15 @@ export class UserService {
     this.http.post('http://127.0.0.1:3000/api/user/register',user).subscribe(c=>console.log(c))
     console.log(user);
   }
-  login(user: Login){
-    let res :any ="";
+  login(user: Login): string {
+    let res: any = '';
     this.http.post('http://127.0.0.1:3000/api/user/login',user).subscribe(c=>{
-      res=c;
+      res = c;
       console.log(res.token);
-      localStorage.setItem('token', JSON.stringify(res.token))
-    });
+      sessionStorage.setItem('token', JSON.stringify(res.token));
 
+    });
+    return JSON.stringify(res.token);
 
   }
 }

@@ -11,14 +11,16 @@ import Login from '../shared/model/Login';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public dialog:MatDialog,private userService: UserService) { }
-  inscription():void{
+  constructor(public dialog: MatDialog, private userService: UserService) { }
+  inscription(): void {
     event.preventDefault();
-    const dialogConfig = this.dialog.open(InscriptionComponent,{
-    })}
-    login(login:Login){
-      this.userService.login(login);
-      console.log(localStorage.getItem('token'))
+    const dialogConfig = this.dialog.open(InscriptionComponent, {})}
+    login(login: Login ) {
+      const res: any = this.userService.login(login);
+      console.log(res);
+      if (res !== 0) { this.dialog.closeAll(); }
+      console.log(sessionStorage.getItem('token'));
+
     }
   ngOnInit() {
   }
