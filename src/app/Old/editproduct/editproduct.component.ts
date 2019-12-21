@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ProductService} from '../services/product.service';
+import {ProductService} from '../../shared/services/product.service';
 import {ActivatedRoute} from '@angular/router';
 import {Subscription} from 'rxjs';
-import Product from '../model/Product';
+import Product from '../../shared/model/Product';
 
 // @ts-ignore
 // @ts-ignore

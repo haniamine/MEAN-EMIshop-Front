@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import Product from '../model/Product';
-import {ProductService} from '../services/product.service';
+import Product from '../../shared/model/Product';
+import {ProductService} from '../../shared/services/product.service';
 
 
 @Component({
@@ -20,7 +20,7 @@ produits  : Array <Product> = [];
   this.produits=this.productService.getAll();
   }
   affiche(data: Product){
-    alert('le produit: '+data.name+' a ete ajouter au panier');}
+    alert('le produit: a ete ajouter au panier');}
 
 
 }

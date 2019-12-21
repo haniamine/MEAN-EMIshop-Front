@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {PanierService} from "../services/panier.service";
-import Product from "../model/Product";
-import PanierItem from "../model/PanierItem";
+import {PanierService} from "../shared/services/panier.service";
+import Product from "../shared/model/Product";
+import PanierItem from "../shared/model/PanierItem";
 import {ɵparseCookieValue} from "@angular/common";
 
 @Component({

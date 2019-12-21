@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {MatDialog} from "@angular/material";
 import {LoginComponent} from "../login/login.component";
-import {PanierComponent} from "../panier/panier.component";
+import {PanierComponent} from "../../panier/panier.component";
 
 @Component({
   selector: 'app-menu',
