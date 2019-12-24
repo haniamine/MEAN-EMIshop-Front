@@ -3,6 +3,7 @@ import {MatDialog} from "@angular/material";
 import {InscriptionComponent} from "../inscription/inscription.component";
 import {UserService} from "../shared/services/user.service";
 import Login from '../shared/model/Login';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +11,14 @@ import Login from '../shared/model/Login';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  public userForm: FormGroup;
   constructor(public dialog: MatDialog, private userService: UserService) { }
   inscription(): void {
     event.preventDefault();
-    const dialogConfig = this.dialog.open(InscriptionComponent, {}); }
+    const dialogConfig = this.dialog.open(InscriptionComponent, {
+      width: '1000px',
+      height: '600px'
+    }); }
    login(login: Login ) {
       const res: any = this.userService.login(login);
       console.log(res);
@@ -23,6 +27,10 @@ export class LoginComponent implements OnInit {
 
     }
   ngOnInit() {
+    this.userForm = new FormGroup({
+      username: new FormControl(''),
+      password: new FormControl('')
+    });
   }
 
 }

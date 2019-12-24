@@ -1,37 +1,18 @@
-<!--<form #userForm="ngForm" (ngSubmit)="login(userForm.value)">
-  <div class="example-container">
-    <h2 style="font-weight: 100; text-align: center;">Please sign in</h2>
-    <mat-form-field appearance="outline">
-      <mat-label>Username</mat-label>
-      <label>
-        <input matInput placeholder="Enter Your Username" type="text" [(ngModel)]="userForm.username">
-      </label>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>Password</mat-label>
-      <label>
-        <input type="password" matInput  placeholder="Enter Password" [(ngModel)]="userForm.password">
-      </label>
-    </mat-form-field>
-    <button mat-button mat-raised-button color="primary" class="buy-now-button space" type="submit">LOGIN
-    </button>
-
-
-    <label style="text-align: center; margin-top: 5px; color:gray">Or</label>
-    <button mat-button mat-stroked-button color="primary" class="button" (click)="inscription()">SIGNUP NOW
-    </button>
-  </div>
-</form>-->
-<form #userForm="ngForm" (ngSubmit)="login(userForm.value)">
-  <label>username</label><br>
-  <label>
-    <input name="username" type="text" [(ngModel)]="username">
-  </label><br>
-  <label>mail</label><br>
-  <label>password</label><br>
-  <label>
-    <input name="password" type="password" [(ngModel)]="password">
-  </label><br>
-  <button type="submit" >submit</button>
-  <button (click)="inscription()">inscription</button>
+<div class="mat-dialog-container">
+  <h2 mat-dialog-title>Login</h2>
+<form [formGroup]="userForm" autocomplete="off" novalidate (ngSubmit)="login(userForm.value)">
+<mat-form-field appearance="outline">
+  <mat-label for="name">username</mat-label>
+  <input matInput  type="text" placeholder="username" formControlName="username" id="name">
+</mat-form-field>
+  <br>
+<mat-form-field appearance="outline">
+    <mat-label for="password">password</mat-label><input class="mat-form-field-appearance-fill" matInput type="password" placeholder="password" formControlName="password" id="password">
+</mat-form-field >
+  <br>
+  <mat-dialog-actions>
+  <button type="submit" mat-raised-button color="primary">submit</button>
+  <button mat-raised-button color="primary" (click)="inscription()" [mat-dialog-close]>inscription</button>
+  </mat-dialog-actions>
 </form>
+</div>

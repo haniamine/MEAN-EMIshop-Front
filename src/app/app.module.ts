@@ -7,12 +7,13 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 import { NgxNavbarModule } from "ngx-bootstrap-navbar";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+
 import {
   MatDialogModule,
   MatFormFieldModule,
   MatInputModule,
   MatMenuModule
-} from "@angular/material";
+} from '@angular/material';
 import { MatCardModule } from "@angular/material";
 import { MatButtonModule } from "@angular/material/button";
 import { NavBarComponent } from "./Old/nav-bar/nav-bar.component";
@@ -38,7 +39,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
   { path: "catalogue", component: CatalogueComponent },
-  { path :"inscription", component: InscriptionComponent}];
+  { path :"login", component: LoginComponent}];
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,6 +85,6 @@ const appRoutes: Routes = [
     HttpClientModule
   ],
   providers: [],
-  entryComponents: [PanierComponent, LoginComponent,InscriptionComponent]
+  entryComponents: [PanierComponent, LoginComponent, InscriptionComponent]
 })
 export class AppModule {}

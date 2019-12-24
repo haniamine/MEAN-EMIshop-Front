@@ -10,21 +10,22 @@ import {MatDialog} from "@angular/material";
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public dialog:MatDialog) { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
   }
 
-  openDialog($event: MouseEvent):void{
+  openDialog($event: MouseEvent): void {
     $event.preventDefault();
     const dialogConfig = this.dialog.open(LoginComponent,{
-    })}
+    } ) } ;
 
-  openPanier($event: MouseEvent):void{
+  openPanier($event: MouseEvent): void {
     $event.preventDefault();
     const dialogpanier = this.dialog.open(PanierComponent,{
       width:'500px',
       height:'700px'
+
     })
 
   }
