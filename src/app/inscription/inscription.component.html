@@ -1,18 +1,18 @@
 <div class="mat-dialog-container">
   <h2 mat-dialog-title>Inscription</h2>
   <form [formGroup]="signupForm" autocomplete="off" novalidate (ngSubmit)="onSubmit(signupForm.value)">
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" style="width: 100%">
       <mat-label for="name">username</mat-label>
-      <input matInput  type="text" placeholder="username" formControlName="username" id="name">
+      <input matInput style="height: 20px" type="text" placeholder="username" formControlName="username" id="name">
     </mat-form-field>
     <br>
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" style="width: 100%;height: auto">
       <mat-label for="mail">mail</mat-label>
-      <input matInput  type="email" placeholder="e-mail" formControlName="mail" id="mail">
+      <input matInput  style="height: 20px;font-size: large" type="email" placeholder="e-mail" formControlName="mail" id="mail">
     </mat-form-field>
     <br>
-    <mat-form-field  appearance="outline" style="width: border-box;height: fit-content">
-      <mat-label for="password">password</mat-label><input  matInput type="password" placeholder="password" formControlName="password" id="password">
+    <mat-form-field  appearance="outline" style="width: 100%;height: auto">
+      <mat-label for="password">password</mat-label><input  style="height: 20px;font-size: large;" matInput type="password" placeholder="password" formControlName="password" id="password">
     </mat-form-field >
     <br>
     <mat-dialog-actions>

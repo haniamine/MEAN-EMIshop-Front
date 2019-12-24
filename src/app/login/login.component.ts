@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
   inscription(): void {
     event.preventDefault();
     const dialogConfig = this.dialog.open(InscriptionComponent, {
-      width: '1000px',
-      height: '600px'
+      width: '550px',
+      height: '400px'
     }); }
    login(login: Login ) {
       const res: any = this.userService.login(login);
