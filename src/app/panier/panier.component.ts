@@ -5,6 +5,8 @@ import PanierItem from '../shared/model/PanierItem';
 import {ɵparseCookieValue} from '@angular/common';
 import {UserService} from '../shared/services/user.service';
 import User from '../shared/model/User';
+import {MatDialog} from '@angular/material';
+import {InscriptionComponent} from '../inscription/inscription.component';
 
 @Component({
   selector: 'app-panier',
@@ -15,8 +17,8 @@ export class PanierComponent implements OnInit {
   total = 0;
   user: string = null;
   panier : Array <PanierItem>;
-displayedColumns: string[] = ['name', 'price', 'desc', 'qte'];
-constructor(private panierService: PanierService, private userService: UserService) { }
+displayedColumns: string[] = ['img','name', 'price', 'desc', 'qte'];
+constructor(private panierService: PanierService, private userService: UserService,public dialog: MatDialog) { }
 
 ngOnInit() {
     this.panier = this.panierService.getAll();
@@ -31,7 +33,16 @@ minQte(p: PanierItem) {
     this.panierService.mqte(p);
     this.total = 0;
     this.panier.map((c) => this.total += c.product.price * c.qte);
+  }
+  remove(p: PanierItem) {
+  this.panierService.remove(p.product);
+  this.panier.splice(this.panier.indexOf(this.panier.filter(c => c.product === p.product)[0]), 0 );
+  this.dialog.closeAll();
+  this.dialog.open(PanierComponent,{
+    width:'1000px',
+    height:'700px'
 
+  })
   }
 commander() {
   const quantity: Array<number> = [];

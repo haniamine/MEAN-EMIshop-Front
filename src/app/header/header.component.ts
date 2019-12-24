@@ -18,15 +18,17 @@ export class HeaderComponent implements OnInit {
   openDialog($event: MouseEvent): void {
     $event.preventDefault();
     const dialogConfig = this.dialog.open(LoginComponent,{
+      width: '500px',
+      height: '400px'
     } ) } ;
 
   openPanier($event: MouseEvent): void {
     $event.preventDefault();
     const dialogpanier = this.dialog.open(PanierComponent,{
-      width:'500px',
-      height:'700px'
+      width: '1000px',
+      height: '700px'
 
-    })
+    });
 
   }
 }

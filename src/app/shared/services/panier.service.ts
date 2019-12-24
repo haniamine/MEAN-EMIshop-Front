@@ -16,8 +16,9 @@ export class PanierService {
     let item = new PanierItem(product,1);
     this.panier.push(item);
   }
-  remove(product:Product):void{
-    this.panier.splice(this.panier.indexOf(this.panier.filter(c=>c.product==product)[0]),1);
+  remove(product: Product): void {
+    this.panier.splice(this.panier.indexOf(this.panier.filter(c => c.product === product)[0]), 1 );
+    console.log(this.panier);
   }
   aqte (p:PanierItem):void{
     this.panier[this.panier.indexOf(p)].qte+=1;
@@ -26,7 +27,7 @@ export class PanierService {
     this.panier[this.panier.indexOf(p)].qte-=1;
   }
   get (p:PanierItem):PanierItem{
-    return this.panier[this.panier.indexOf(p)]
+    return this.panier[this.panier.indexOf(p)];
   }
   command(commande: any) {
     this.http.post('http://127.0.0.1:3000/api/command/', commande).subscribe(c => console.log(c)); }}

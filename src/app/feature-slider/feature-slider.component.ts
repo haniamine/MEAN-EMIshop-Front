@@ -15,7 +15,7 @@ export class FeatureSliderComponent implements OnInit {
   ngOnInit() {
     this.productService.getAll();
   }
-  onSelect(product :Product){
+  onSelect(product :Product) {
     this.panierService.add(product);
   }
   getDetails(id: string) {
