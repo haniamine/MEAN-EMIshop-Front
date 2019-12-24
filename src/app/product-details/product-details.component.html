@@ -1,13 +1,13 @@
-<div class="container" id="cover">
+<div class="container" id="cover" style="padding-top: 50px;">
   <div class="row mt-5">
-    <div class="col-5 bg-dark">
+    <div class="col-sm-5 col-12 bg-dark">
       <img
         [src]="productService.selectedItem.picUrl"
-        class="card-img-top"
+        class="card-img-top mt-5 mb-5"
         alt="..."
       />
     </div>
-    <div class="col-5 offset-1">
+    <div class="col-sm-5 col-12 offset-lg-1">
       <h1 style="font-family: bebas neue;font-size: 110px;">{{ productService.selectedItem.title }}</h1>
       <h2 style="font-weight:bold;margin-top: -10px;">Price: <span class="offset-5" style="font-size: 50px;">{{ productService.selectedItem.price }}€</span></h2>
       <h3 ><b>Description:</b> <br></h3>

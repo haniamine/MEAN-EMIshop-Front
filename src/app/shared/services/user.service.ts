@@ -8,10 +8,11 @@ import Login from "../model/Login";
 })
 export class UserService {
 
+  userConnected: User;
   constructor(private http: HttpClient) { }
   register(user: User) {
     this.http.post('http://127.0.0.1:3000/api/user/register', user).subscribe(c => console.log(c));
-    console.log(user);
+    console.log("Nouvelle inscription" + user);
   }
   user() {
     let res: any = null;

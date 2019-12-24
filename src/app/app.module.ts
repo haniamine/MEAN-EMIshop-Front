@@ -33,6 +33,7 @@ import { ProductComponent } from './product/product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -54,7 +55,8 @@ const appRoutes: Routes = [
     CatalogueComponent,
     ProductComponent,
     InscriptionComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    SearchBarComponent
   ],
   bootstrap: [AppComponent],
   imports: [

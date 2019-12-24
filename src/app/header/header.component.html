@@ -1,4 +1,4 @@
-<nav class="site-header sticky-top py-1 pt-3 font-size-20">
+<!--<nav class="site-header sticky-top py-1 pt-3 font-size-20">
   <div class="container d-flex flex-column flex-md-row">
     <a class="py-2 col-2" href="/" aria-label="Product">
       <h3
@@ -18,8 +18,42 @@
       <h3><i class="fa fa-shopping-cart" aria-hidden="true"></i></h3
     ></a>
 
-    <a class="py-2 d-none d-md-inline-block col-2" (click)="openDialog($event)" href=""
+    <a class="py-2 d-none col-2" (click)="openDialog($event)" href=""
       ><h3><i class="fa fa-user" aria-hidden="true"></i></h3>
     </a>
+
+    <app-search-bar></app-search-bar>
+  </div>
+</nav>--->
+
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top mb-5 " style="background-color: rgb(38, 38, 38);">
+  <a class="navbar-brand" href="/"><h3 class="navbar-brand"
+    style="font-weight:bold;font-family: bebas neue;font-size: 25px;">
+    EMI-Shop
+  </h3></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse collapse show" id="navbarCollapse" style="">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link personalized-link" href="/" >Acceuil <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link personalized-link" href="/catalogue">Catalogue</a>
+      </li>
+    </ul>
+      <a class="nav-link personalized-link " (click)="openPanier($event)" href="" >
+        <h3><i class="fa fa-shopping-cart" aria-hidden="true"></i></h3
+      ></a>
+      <a class="nav-link personalized-link " (click)="openDialog($event)" href="" >
+        <h3><i class="fa fa-user" aria-hidden="true"></i></h3
+      ></a>
+    <app-search-bar></app-search-bar>
+
+
+
   </div>
 </nav>
