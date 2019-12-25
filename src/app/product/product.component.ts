@@ -12,10 +12,14 @@ import { ProductService } from '../shared/services/product.service';
 export class ProductComponent implements OnInit {
 
   @Input() product :Product;
+  liker: number;
+  disliker: number;
   constructor(private panierService:PanierService,private productService:ProductService,public dialog:MatDialog) {
   }
 
   ngOnInit() {
+    this.liker = this.product.like;
+    this.disliker = this.product.dislike;
   }
   like(prod:Product){
     prod.like++;

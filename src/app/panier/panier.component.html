@@ -37,10 +37,14 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
     <mat-label>total = {{total}}</mat-label>
+    <br>
+    <mat-label class="text-danger" *ngIf="!token" >Vous devez vous connecter avant de pouvoir faire une commande</mat-label>
+    <button mat-raised-button (click)="login()">Se connecter</button>
   </mat-dialog-content>
   <mat-dialog-actions>
 
-    <button mat-raised-button color="accent" (click)="commander()">commander</button>
+    <br>
+    <button mat-raised-button color="accent" [disabled]="!token" (click)="commander()">commander</button>
   </mat-dialog-actions>
 </div>
 

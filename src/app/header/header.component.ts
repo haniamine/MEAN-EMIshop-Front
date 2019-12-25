@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {LoginComponent} from "../login/login.component";
-import {PanierComponent} from "../panier/panier.component";
-import {MatDialog} from "@angular/material";
+import {LoginComponent} from '../login/login.component';
+import {PanierComponent} from '../panier/panier.component';
+import {MatDialog} from '@angular/material';
 
 @Component({
   selector: 'app-header',
@@ -11,24 +11,27 @@ import {MatDialog} from "@angular/material";
 export class HeaderComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
-
+  token = null;
   ngOnInit() {
+    this.token = sessionStorage.getItem('token');
   }
 
   openDialog($event: MouseEvent): void {
     $event.preventDefault();
-    const dialogConfig = this.dialog.open(LoginComponent,{
+    const dialogConfig = this.dialog.open(LoginComponent, {
       width: '500px',
       height: '400px'
-    } ) } ;
-
+    } ); }
   openPanier($event: MouseEvent): void {
     $event.preventDefault();
-    const dialogpanier = this.dialog.open(PanierComponent,{
+    const dialogpanier = this.dialog.open(PanierComponent, {
       width: '1000px',
       height: '700px'
 
-    });
+    }); }
+    disconnect(): void {
+      sessionStorage.removeItem('token');
+      window.location.reload();   }
 
-  }
+
 }
