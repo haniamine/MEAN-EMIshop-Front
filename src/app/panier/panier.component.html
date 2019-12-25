@@ -30,17 +30,21 @@
       <td mat-cell *matCellDef="let element"> {{panierService.get(element).qte}}
         <button mat-stroked-button  (click)=addQte(element)>+</button>
         <button mat-stroked-button  (click)=minQte(element)>-</button>
-        <button mat-stroked-button (click)="remove(element)" routerLink="RefreshComponent"> Retirer </button>
+        <button mat-stroked-button (click)="remove(element)"> Retirer </button>
       </td>
     </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
     <mat-label>total = {{total}}</mat-label>
+    <br>
+    <mat-label class="text-danger" *ngIf="!token" >Vous devez vous connecter avant de pouvoir faire une commande</mat-label>
+    <button mat-raised-button (click)="login()">Se connecter</button>
   </mat-dialog-content>
   <mat-dialog-actions>
 
-    <button mat-raised-button color="accent" (click)="commander()">commander</button>
+    <br>
+    <button mat-raised-button color="accent" [disabled]="!token" (click)="commander()">commander</button>
   </mat-dialog-actions>
 </div>
 

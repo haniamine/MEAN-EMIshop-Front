@@ -7,6 +7,7 @@ import {UserService} from '../shared/services/user.service';
 import User from '../shared/model/User';
 import {MatDialog} from '@angular/material';
 import {InscriptionComponent} from '../inscription/inscription.component';
+import {LoginComponent} from '../login/login.component';
 
 @Component({
   selector: 'app-panier',
@@ -14,7 +15,7 @@ import {InscriptionComponent} from '../inscription/inscription.component';
   styleUrls: ['./panier.component.scss']
 })
 export class PanierComponent implements OnInit {
-  mySubscription: any;
+  token= null;
   total = 0;
   user: string = null;
   panier : Array <PanierItem>;
@@ -22,6 +23,7 @@ displayedColumns: string[] = ['img','name', 'price', 'desc', 'qte'];
 constructor(private panierService: PanierService, private userService: UserService,public dialog: MatDialog) { }
 
 ngOnInit() {
+    this.token = sessionStorage.getItem('token');
     this.panier = this.panierService.getAll();
     this.panier.map((c) => this.total += c.product.price * c.qte);
   }
@@ -44,6 +46,12 @@ minQte(p: PanierItem) {
     height:'700px'
 
   })
+  }
+  login(){
+    const dialogConfig = this.dialog.open(LoginComponent, {
+      width: '500px',
+      height: '400px'
+    } );
   }
 commander() {
   const quantity: Array<number> = [];

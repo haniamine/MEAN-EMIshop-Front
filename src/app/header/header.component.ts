@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {LoginComponent} from "../login/login.component";
-import {PanierComponent} from "../panier/panier.component";
-import {MatDialog} from "@angular/material";
-import {disconnect} from 'cluster';
+import {LoginComponent} from '../login/login.component';
+import {PanierComponent} from '../panier/panier.component';
+import {MatDialog} from '@angular/material';
 
 @Component({
   selector: 'app-header',
