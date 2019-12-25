@@ -16,7 +16,7 @@ export class FeatureSliderComponent implements OnInit {
     this.productService.getAll();
   }
   onSelect(product :Product) {
-    this.panierService.add(product);
+    this.panierService.add(product, 1);
   }
   getDetails(id: string) {
     this.router.navigateByUrl("/details"+ `:${id}`);

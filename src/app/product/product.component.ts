@@ -39,7 +39,7 @@ export class ProductComponent implements OnInit {
     return this.productService.putDislike(prod)
   }
   onSelect(){
-    this.panierService.add(this.product);
+    this.panierService.add(this.product, 1);
   }
 
 }

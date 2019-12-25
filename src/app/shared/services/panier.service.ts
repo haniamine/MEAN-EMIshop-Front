@@ -7,14 +7,15 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class PanierService {
-  panier: Array<PanierItem>=[];
+  panier: Array<PanierItem>= [];
   constructor(private http: HttpClient) { }
   getAll():Array<PanierItem>{
     return this.panier;
   }
-  add(product:Product):void{
-    let item = new PanierItem(product,1);
+  add(product:Product, qte: number):void{
+    let item = new PanierItem(product, qte);
     this.panier.push(item);
+    localStorage.setItem('panier', JSON.stringify(this.panier));
   }
   remove(product: Product): void {
     this.panier.splice(this.panier.indexOf(this.panier.filter(c => c.product === product)[0]), 1 );
@@ -30,4 +31,5 @@ export class PanierService {
     return this.panier[this.panier.indexOf(p)];
   }
   command(commande: any) {
-    this.http.post('http://127.0.0.1:3000/api/command/', commande).subscribe(c => console.log(c)); }}
+    this.http.post('http://127.0.0.1:3000/api/command/', commande).subscribe(c => console.log(c)); 
+    sessionStorage.setItem('panier', ''); }}

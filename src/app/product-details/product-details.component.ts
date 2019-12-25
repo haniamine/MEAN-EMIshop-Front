@@ -22,7 +22,7 @@ export class ProductDetailsComponent implements OnInit {
     let id = this.route.snapshot.paramMap.get('id');
     this.productService.getById(id);
   }
-  onSelect(){
-    this.panierService.add(this.product);
+  onSelect() {
+    this.panierService.add(this.product, 1);
   }
 }

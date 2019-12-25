@@ -39,11 +39,9 @@
     <mat-label>total = {{total}}</mat-label>
     <br>
     <mat-label class="text-danger" *ngIf="!token" >Vous devez vous connecter avant de pouvoir faire une commande</mat-label>
-    <button mat-raised-button (click)="login()">Se connecter</button>
+    <button *ngIf="!token" mat-raised-button (click)="login()">Se connecter</button>
   </mat-dialog-content>
   <mat-dialog-actions>
-
-    <br>
     <button mat-raised-button color="accent" [disabled]="!token" (click)="commander()">commander</button>
   </mat-dialog-actions>
 </div>
