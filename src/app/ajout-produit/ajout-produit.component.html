@@ -1,0 +1,28 @@
+<div style="margin-top: 100px">
+  <h2 >Ajout Produit</h2>
+  <form [formGroup]="productForm" autocomplete="off" novalidate (ngSubmit)="onSubmit(productForm.value)">
+    <mat-form-field appearance="outline" style="width: 100%">
+      <mat-label for="title">title</mat-label>
+      <input matInput style="height: 20px" type="text" placeholder="title" formControlName="title" id="title">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline" style="width: 100%;height: auto">
+      <mat-label for="description">description</mat-label>
+      <input matInput  style="height: 20px;font-size: large" type="text area" placeholder="description" formControlName="description" id="description">
+    </mat-form-field>
+    <br>
+    <mat-form-field  appearance="outline" style="width: 100%;height: auto">
+      <mat-label for="categorie">categorie</mat-label><input  style="height: 20px;font-size: large;" matInput type="text" placeholder="categorie" formControlName="categorie" id="categorie">
+    </mat-form-field >
+    <mat-form-field  appearance="outline" style="width: 100%;height: auto">
+      <mat-label for="price">pricz</mat-label><input  style="height: 20px;font-size: large;" matInput type="number" placeholder="price" formControlName="price" id="price">
+    </mat-form-field >
+    <mat-form-field  appearance="outline" style="width: 100%;height: auto">
+      <mat-label for="picUrl">Pics</mat-label><input  style="height: 20px;font-size: large;" matInput type="text" placeholder="pics" formControlName="picUrl" id="picUrl">
+    </mat-form-field >
+    <br>
+    <mat-dialog-actions>
+      <button type="submit" mat-raised-button color="primary">submit</button>
+    </mat-dialog-actions>
+  </form>
+</div>

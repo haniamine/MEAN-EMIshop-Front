@@ -36,11 +36,13 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { RechercheComponent } from './recherche/recherche.component';
+import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
   { path: "catalogue", component: CatalogueComponent },
-  { path :"recherche", component: RechercheComponent}];
+  { path :"recherche", component: RechercheComponent},
+  {path: 'addproduct', component: AjoutProduitComponent}];
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +61,8 @@ const appRoutes: Routes = [
     InscriptionComponent,
     ProductDetailsComponent,
     SearchBarComponent,
-    RechercheComponent
+    RechercheComponent,
+    AjoutProduitComponent
   ],
   bootstrap: [AppComponent],
   imports: [

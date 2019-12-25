@@ -29,7 +29,12 @@ export class ProductService {
   }
 
   postProduct(product: Product) {
-    return this.http.post(this.baseURL, product);
+    return this.http.post(this.baseURL, product).toPromise().then(res => {
+      if (res.status === 'success') {
+        alert('le produit a ete creer avec succes');
+      }
+      else {alert('Le produit ne c\' est pas bien envoye veuillez reremplir le formulaire ');}
+    });
   }
 
   putProduct(product: Product) {
