@@ -14,6 +14,7 @@ import {InscriptionComponent} from '../inscription/inscription.component';
   styleUrls: ['./panier.component.scss']
 })
 export class PanierComponent implements OnInit {
+  mySubscription: any;
   total = 0;
   user: string = null;
   panier : Array <PanierItem>;

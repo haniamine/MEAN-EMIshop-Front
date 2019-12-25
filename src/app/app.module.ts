@@ -35,11 +35,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { RechercheComponent } from './recherche/recherche.component';
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
   { path: "catalogue", component: CatalogueComponent },
-  { path :"login", component: LoginComponent}];
+  { path :"recherche", component: RechercheComponent}];
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +58,8 @@ const appRoutes: Routes = [
     ProductComponent,
     InscriptionComponent,
     ProductDetailsComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    RechercheComponent
   ],
   bootstrap: [AppComponent],
   imports: [

@@ -30,7 +30,7 @@
       <td mat-cell *matCellDef="let element"> {{panierService.get(element).qte}}
         <button mat-stroked-button  (click)=addQte(element)>+</button>
         <button mat-stroked-button  (click)=minQte(element)>-</button>
-        <button mat-stroked-button (click)="remove(element)"> Retirer </button>
+        <button mat-stroked-button (click)="remove(element)" routerLink="RefreshComponent"> Retirer </button>
       </td>
     </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

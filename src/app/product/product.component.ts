@@ -12,10 +12,14 @@ import { ProductService } from '../shared/services/product.service';
 export class ProductComponent implements OnInit {
 
   @Input() product :Product;
+  liker: number;
+  disliker: number;
   constructor(private panierService:PanierService,private productService:ProductService,public dialog:MatDialog) {
   }
 
   ngOnInit() {
+    this.liker = this.product.like;
+    this.disliker = this.product.dislike;
   }
   etat():string{
     /*if(this.product.isDisponible) return "on stock";
@@ -26,10 +30,12 @@ export class ProductComponent implements OnInit {
     //this.product.isDisponible=!this.product.isDisponible;
   }
   like(prod:Product){
+    this.liker ++;
     let id= prod._id
     return this.productService.putLike(id);
   }
   dislike(prod:Product){
+    this.disliker++;
     return this.productService.putDislike(prod)
   }
   onSelect(){
