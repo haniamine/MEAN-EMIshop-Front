@@ -21,9 +21,7 @@ export class LoginComponent implements OnInit {
     }); }
    login(login: Login ) {
       const res: any = this.userService.login(login);
-      console.log(res);
-      if (res !== 0) { this.dialog.closeAll(); }
-      console.log(sessionStorage.getItem('token'));
+      //if (sessionStorage.getItem('token')) { this.dialog.closeAll(); window.location.reload(); } else { alert('une erreur est survenu lors de la connection veuillez reesayer')}
 
     }
   ngOnInit() {

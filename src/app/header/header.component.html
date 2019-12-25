@@ -48,9 +48,13 @@
       <a class="nav-link personalized-link " (click)="openPanier($event)" href="" >
         <h3><i class="fa fa-shopping-cart" aria-hidden="true"></i></h3
       ></a>
-      <a class="nav-link personalized-link " (click)="openDialog($event)" href="" >
+      <a *ngIf="!token; else elseBlock" class="nav-link personalized-link " (click)="openDialog($event)" href="" >
         <h3><i class="fa fa-user" aria-hidden="true"></i></h3
       ></a>
+    <ng-template #elseBlock>
+      <a class="nav-link personalized-link " (click)="disconnect($event)" href="" >
+        <i class="fa fa-user" aria-hidden="true"></i> Disconnect</a>
+    </ng-template>
     <app-search-bar></app-search-bar>
 
 

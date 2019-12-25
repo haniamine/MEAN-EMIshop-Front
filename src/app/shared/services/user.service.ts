@@ -28,7 +28,8 @@ export class UserService {
     this.http.post('http://127.0.0.1:3000/api/user/login', user ).subscribe(c => {
       res = c;
       console.log(res.token);
-      sessionStorage.setItem('id', JSON.stringify(res.token));
+      sessionStorage.setItem('token', JSON.stringify(res.token));
+      window.location.reload();
 
     });
     return JSON.stringify(res.token);
