@@ -17,19 +17,12 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
   }
-  etat():string{
-    /*if(this.product.isDisponible) return "on stock";
-    else return "epuiser";*/
-    return "ok"
-  }
-  changeetat():void{
-    //this.product.isDisponible=!this.product.isDisponible;
-  }
   like(prod:Product){
-    let id= prod._id
-    return this.productService.putLike(id);
+    prod.like++;
+    return this.productService.putLike(prod);
   }
   dislike(prod:Product){
+    prod.dislike++;
     return this.productService.putDislike(prod)
   }
   onSelect(){

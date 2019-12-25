@@ -18,9 +18,15 @@ export class ProductService {
       .get(this.baseURL)
       .toPromise()
       .then(res => (this.produits = res as Product[]))
-      .then(res => (this.sliderProduct = this.produits.slice(0,Math.min(3,this.produits.length))));
-
+      .then(
+        res =>
+          (this.sliderProduct = this.produits.slice(
+            0,
+            Math.min(3, this.produits.length)
+          ))
+      );
   }
+
   getById(id: string) {
     this.http
       .get(this.baseURL + `/${id}`)
@@ -41,11 +47,16 @@ export class ProductService {
   }
 
   //like & dislike
-  putLike(id) {
-    return this.http.put(this.baseURL + `/like/${id}`,id);
-
+  putLike(product: Product) {
+    return this.http
+      .get(this.baseURL + `/like/${product._id}`)
+      .toPromise()
+      //.then(res => (this.selectedItem = res as Product));
   }
   putDislike(product: Product) {
-    return this.http.put(this.baseURL+`/dislike` + `/${product._id}`,product);
+    return this.http
+      .get(this.baseURL + `/dislike` + `/${product._id}`)
+      .toPromise()
+     // .then(res => (this.selectedItem = res as Product));
   }
 }

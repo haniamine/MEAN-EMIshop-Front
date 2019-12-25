@@ -13,24 +13,19 @@
       <h3 ><b>Description:</b> <br></h3>
       <h3><span class="mt-2">{{ productService.selectedItem.description }}</span></h3>
       <div class="row mt-5">
-        <div class="col-1 mt-2">
-          <button mat-raised-button (click)="onSelect()">
+        <div class="col mt-2">
+          <button mat-raised-button class="bg-dark font-white" (click)="onSelect()">
             Ajouter Au panier
           </button>
-        </div>
-        <div class="col-1 offset-3 mt-2">
-          <i
-            class="btn btn-outline-success fa fa-thumbs-up"
-            aria-hidden="true"
-            (click)="like(product)"
-          ></i>
-        </div>
-        <div class="col mt-2">
-          <i
-            class="btn btn-outline-danger fa fa-thumbs-down"
-            aria-hidden="true"
-            (click)="dislike(product)"
-          ></i>
+          <button mat-stroked-button [routerLink]="['/catalogue']" class="m-3">Back</button>
+          <br/>
+              <i class="btn btn-outline-success fa fa-thumbs-up" aria-hidden="true" (click)="like(productService.selectedItem)"></i><span class="like-counter">{{ productService.selectedItem.like }}</span>
+
+              <i class="btn btn-outline-danger fa fa-thumbs-down"  aria-hidden="true"  (click)="dislike(productService.selectedItem)"></i> <span class="like-counter">{{ productService.selectedItem.dislike }}</span>
+
+              <i class="btn btn-outline-dark fa fa-share-alt"  aria-hidden="true"  (click)="share(productService.selectedItem)"></i>
+
+
         </div>
       </div>
     </div>

@@ -8,6 +8,10 @@ import {HttpClient} from '@angular/common/http';
 })
 export class PanierService {
   panier: Array<PanierItem>=[];
+
+
+  readonly baseURL = "http://localhost:3000/api/command";
+
   constructor(private http: HttpClient) { }
   getAll():Array<PanierItem>{
     return this.panier;
@@ -29,5 +33,5 @@ export class PanierService {
   get (p:PanierItem):PanierItem{
     return this.panier[this.panier.indexOf(p)];
   }
-  command(commande: any) {
-    this.http.post('http://127.0.0.1:3000/api/command/', commande).subscribe(c => console.log(c)); }}
+  command(command: any) {
+    this.http.post(this.baseURL, command).subscribe(c => console.log(c)); }}

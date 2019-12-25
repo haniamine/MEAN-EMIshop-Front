@@ -9,15 +9,16 @@ import Login from "../model/Login";
 export class UserService {
 
   userConnected: User;
+  readonly baseURL = "http://localhost:3000/api/user";
   constructor(private http: HttpClient) { }
   register(user: User) {
-    this.http.post('http://127.0.0.1:3000/api/user/register', user).subscribe(c => console.log(c));
+    this.http.post(this.baseURL +'register', user).subscribe(c => console.log(c));
     console.log("Nouvelle inscription" + user);
   }
   user() {
     let res: any = null;
     const token: string = sessionStorage.getItem('token');
-    this.http.get('http://127.0.0.1:3000/api/user/me', {headers: {Authorization: JSON.parse(token)}})
+    this.http.get(this.baseURL+'me', {headers: {Authorization: JSON.parse(token)}})
     .subscribe(c => {
     res = c ;
     console.log(res);
@@ -25,7 +26,7 @@ export class UserService {
   }
   login(user: Login): string {
     let res: any = '';
-    this.http.post('http://127.0.0.1:3000/api/user/login', user ).subscribe(c => {
+    this.http.post(this.baseURL+'/login', user ).subscribe(c => {
       res = c;
       console.log(res.token);
       sessionStorage.setItem('id', JSON.stringify(res.token));
