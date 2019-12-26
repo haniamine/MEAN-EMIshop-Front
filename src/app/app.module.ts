@@ -40,7 +40,7 @@ import { RechercheComponent } from './recherche/recherche.component';
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
   { path: "catalogue", component: CatalogueComponent },
-  { path :"recherche", component: RechercheComponent}];
+  { path :"catalogue/:search", component: RechercheComponent}];
 @NgModule({
   declarations: [
     AppComponent,

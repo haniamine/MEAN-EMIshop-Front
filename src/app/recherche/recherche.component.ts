@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RechercheService} from '../shared/services/recherche.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-recherche',
@@ -8,8 +9,12 @@ import {RechercheService} from '../shared/services/recherche.service';
 })
 export class RechercheComponent implements OnInit {
 
-  constructor(private serviceRecherche: RechercheService) { }
+  constructor(private serviceRecherche: RechercheService,
+    private route: ActivatedRoute) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    let search = this.route.snapshot.paramMap.get('id');
+    this.serviceRecherche.recherche(search);
+  }
 
 }

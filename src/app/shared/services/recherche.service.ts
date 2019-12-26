@@ -6,11 +6,12 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class RechercheService {
-  readonly baseURL = 'http://localhost:3000/api/recherche';
+  readonly baseURL = 'http://localhost:3000/api/search';
   products: Array < Product > = [] ;
   constructor(private http: HttpClient) {}
+
   recherche(critere) {
-    this.http.post(this.baseURL, critere)
+    this.http.get(this.baseURL + `/${critere}`)
       .toPromise()
       .then(res => (this.products = res as Product[]));
 }}
