@@ -36,11 +36,15 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { RechercheComponent } from './recherche/recherche.component';
+import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { CommandGridComponent } from './command-grid/command-grid.component';
+import { CommandItemComponent } from './command-item/command-item.component';
+import { CommandDetailsComponent } from './command-details/command-details.component';
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
-  { path: "catalogue", component: CatalogueComponent },
-  { path :"catalogue/:search", component: RechercheComponent}];
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +63,12 @@ const appRoutes: Routes = [
     InscriptionComponent,
     ProductDetailsComponent,
     SearchBarComponent,
-    RechercheComponent
+    RechercheComponent,
+    AjoutProduitComponent,
+    UserProfileComponent,
+    CommandGridComponent,
+    CommandItemComponent,
+    CommandDetailsComponent
   ],
   bootstrap: [AppComponent],
   imports: [

@@ -1,0 +1,14 @@
+
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title">Id: {{ command._id }}</h2>
+      <h2>
+        Total: <span style="font-weight: bold;"> {{ command.total }} €</span>
+      </h2>
+      <h3>
+        Nb Produit:
+        <span style="font-weight: bold;"> {{ command.quantity.length }}</span>
+      </h3>
+      <div class="text-center"><button  mat-stroked-button [routerLink]="['/commande', command._id]" class="m-3">Details de la commande</button></div>
+    </div>
+  </div>

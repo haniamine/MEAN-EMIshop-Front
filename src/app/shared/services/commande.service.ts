@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CommandeService {
 
-  selectedCommande: Commande;
+  selectedCommand: Commande;
   commands: Commande[];
 
   readonly baseURL = "http://localhost:3000/api/command";
@@ -35,7 +35,7 @@ export class CommandeService {
     this.http
       .get(this.baseURL+`/${id}`)
       .toPromise()
-      .then(res => (this.commands = res as Commande[]));
+      .then(res => (this.selectedCommand = res as Commande));
   }
 
 }

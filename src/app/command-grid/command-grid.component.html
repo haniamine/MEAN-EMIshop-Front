@@ -1,0 +1,8 @@
+
+
+<div class="container">
+  <div style="margin-top: 120px;"><h1>Mes Commandes</h1></div>
+  <div class="row products">
+    <app-command-item class="col-lg-4 col-12 mb-5" *ngFor="let command of commandService.commands"  [command]="command"></app-command-item>
+  </div>
+</div>

@@ -17,8 +17,9 @@ export class PanierService {
     return this.panier;
   }
   add(product:Product):void{
-    let item = new PanierItem(product,1);
+    let item = new PanierItem(product, 1);
     this.panier.push(item);
+    localStorage.setItem('panier', JSON.stringify(this.panier));
   }
   remove(product: Product): void {
     this.panier.splice(this.panier.indexOf(this.panier.filter(c => c.product === product)[0]), 1 );
@@ -34,4 +35,5 @@ export class PanierService {
     return this.panier[this.panier.indexOf(p)];
   }
   command(command: any) {
-    this.http.post(this.baseURL, command).subscribe(c => console.log(c)); }}
+    this.http.post(this.baseURL, command).subscribe(c => console.log(c));
+    sessionStorage.setItem('panier', ''); }}

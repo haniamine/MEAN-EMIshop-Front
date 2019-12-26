@@ -28,7 +28,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top mb-5 " style="background-color: rgb(38, 38, 38);">
-  <a class="navbar-brand" href="/"><h3 class="navbar-brand"
+  <a class="navbar-brand" [routerLink]="['/']"><h3 class="navbar-brand"
     style="font-weight:bold;font-family: bebas neue;font-size: 25px;">
     EMI-Shop
   </h3></a>
@@ -36,13 +36,13 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="navbar-collapse collapse show" id="navbarCollapse" style="">
+  <div class="navbar-collapse collapse show" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link personalized-link" href="/" >Acceuil <span class="sr-only">(current)</span></a>
+        <a class="nav-link personalized-link" [routerLink]="['/']" >Acceuil <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link personalized-link" href="/catalogue">Catalogue</a>
+        <a class="nav-link personalized-link" [routerLink]="['/catalogue']">Catalogue</a>
       </li>
     </ul>
       <a class="nav-link personalized-link " (click)="openPanier($event)" href="" >
@@ -52,8 +52,18 @@
         <h3><i class="fa fa-user" aria-hidden="true"></i></h3
       ></a>
     <ng-template #elseBlock>
-      <a class="nav-link personalized-link " (click)="disconnect($event)" href="" >
-        <i class="fa fa-user" aria-hidden="true"></i> Disconnect</a>
+      <div class="dropdown">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <button class="btn btn-secondary dropdown-toggle mr-5 bg-dark" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{this.userService.userConnected.username}} <span style="color: #2ecc71;">Connected</span>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" routerLink="/commandes">Mes commandes</a>
+          <a class="dropdown-item" routerLink="addproduct">Ajout Produit</a>
+          <a class="dropdown-item" [routerLink]="['/profile']">Detail Profile</a>
+          <a style="color: red;" (click)="disconnect()" class="dropdown-item" href="#">Logout</a>
+        </div>
+      </div>
     </ng-template>
     <app-search-bar></app-search-bar>
 

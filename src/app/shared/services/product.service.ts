@@ -8,6 +8,7 @@ import { HttpClient } from "@angular/common/http";
 export class ProductService {
   selectedItem: Product;
   produits: Product[];
+  produitsRecherche: Product[];
   sliderProduct: Product[];
   readonly baseURL = "http://localhost:3000/api/product";
 
@@ -25,6 +26,12 @@ export class ProductService {
             Math.min(3, this.produits.length)
           ))
       );
+  }
+  getSearch(search:string) {
+    this.http
+      .get(this.baseURL+`/search/${search}`)
+      .toPromise()
+      .then(res => (this.produitsRecherche = res as Product[]))
   }
 
   getById(id: string) {

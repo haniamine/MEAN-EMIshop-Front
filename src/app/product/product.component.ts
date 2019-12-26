@@ -18,15 +18,15 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.liker = this.product.like;
-    this.disliker = this.product.dislike;
   }
   like(prod:Product){
-    prod.like++;
+    let i = this.productService.produits.indexOf(prod)
+    this.productService.produits[i].like++;
     return this.productService.putLike(prod);
   }
   dislike(prod:Product){
-    prod.dislike++;
+    let i = this.productService.produits.indexOf(prod)
+    this.productService.produits[i].dislike++;
     return this.productService.putDislike(prod)
   }
   onSelect(){

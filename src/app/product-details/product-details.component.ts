@@ -10,7 +10,7 @@ import {PanierService} from '../shared/services/panier.service';
   styleUrls: ["./product-details.component.scss"]
 })
 export class ProductDetailsComponent implements OnInit {
-  product:Product
+  product: Product;
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,

@@ -1,5 +1,6 @@
 <div class="container">
+  <div style="margin-top: 120px;"><h1>Hello</h1></div>
   <div class="row products">
-    <app-product class="col-lg-4 col-12 mb-5" *ngFor="let produit of serviceRecherche.products"  [product]="produit"></app-product>
+    <app-product class="col-lg-4 col-12 mb-5" *ngFor="let produit of productService.produitsRecherche"  [product]="produit"></app-product>
   </div>
 </div>

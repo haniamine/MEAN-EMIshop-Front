@@ -3,11 +3,13 @@ export default class User {
   private _username: string;
   private password: string;
   private _mail: string;
+  private role:string;
 
   constructor(username: string, password: string, mail: string) {
     this._username = username;
     this.password = password;
     this._mail = mail;
+    this.role = "user"
   }
 
   get username(): string {

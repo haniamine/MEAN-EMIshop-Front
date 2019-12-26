@@ -13,7 +13,7 @@
           aria-hidden="true"
           (click)="like(product)"
         ></i>
-        {{ liker }}
+        <span class="like-counter">{{ product.like }}</span>
       </div>
       <div class="col-3 mt-2">
         <i
@@ -21,7 +21,7 @@
           aria-hidden="true"
           (click)="dislike(product)"
         ></i>
-        {{ disliker }}
+        <span class="like-counter">{{ product.dislike }}</span>
       </div>
     </div>
 

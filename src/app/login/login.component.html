@@ -1,4 +1,4 @@
-<div class="mat-dialog-container">
+<div class="mat-dialog-container" style="background-color:rgba(0, 0, 0, 0)">
   <h2 mat-dialog-title>Login</h2>
 <form [formGroup]="userForm" autocomplete="off" novalidate (ngSubmit)="login(userForm.value)">
 <mat-form-field appearance="outline" style="width: 100%">
@@ -11,8 +11,8 @@
 </mat-form-field >
   <br>
   <mat-dialog-actions>
-  <button type="submit" mat-raised-button color="primary">submit</button>
-  <button mat-raised-button color="primary" (click)="inscription()" [mat-dialog-close]>inscription</button>
+  <button type="submit" mat-raised-button color="primary">Se Connecter</button>
+  <button mat-raised-button color="primary" (click)="inscription()" [mat-dialog-close]>S'inscrire</button>
   </mat-dialog-actions>
 </form>
 </div>
