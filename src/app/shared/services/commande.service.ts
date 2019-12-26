@@ -10,6 +10,7 @@ export class CommandeService {
 
   selectedCommand: Commande;
   commands: Commande[];
+  product: Product;
 
   readonly baseURL = "http://localhost:3000/api/command";
 
@@ -36,6 +37,14 @@ export class CommandeService {
       .get(this.baseURL+`/${id}`)
       .toPromise()
       .then(res => (this.selectedCommand = res as Commande));
+
   }
 
+  getProduct(id:string):Product{
+    this.http
+      .get('http://localhost:3000/api/product'+`/${id}`)
+      .toPromise()
+      .then(res => (this.product= res as Product));
+      return this.product
+  }
 }
