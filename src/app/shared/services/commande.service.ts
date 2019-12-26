@@ -36,6 +36,7 @@ export class CommandeService {
       .get(this.baseURL+`/${id}`)
       .toPromise()
       .then(res => (this.selectedCommand = res as Commande));
+    console.log(this.selectedCommand);
   }
 
 }
