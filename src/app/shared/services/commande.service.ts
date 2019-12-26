@@ -11,7 +11,7 @@ export class CommandeService {
   selectedCommand: Commande;
   commands: Commande[];
 
-  readonly baseURL = "http://localhost:3000/api/command";
+  readonly baseURL = 'http://localhost:3000/api/command';
 
 
   constructor(private http: HttpClient) { }
