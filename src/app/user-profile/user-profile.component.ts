@@ -9,7 +9,7 @@ import User from '../shared/model/User';
   styleUrls: ["./user-profile.component.scss"]
 })
 export class UserProfileComponent implements OnInit {
-  user:User
+  user: User;
   constructor(
     private userService: UserService
   ) {}

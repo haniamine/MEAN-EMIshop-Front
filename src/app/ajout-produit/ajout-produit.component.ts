@@ -22,7 +22,8 @@ export class AjoutProduitComponent implements OnInit {
     });
   }
   onSubmit(product: Product) {
-    alert(product.categorie);
+    .0
+
     this.productService.postProduct(product);
   }
 

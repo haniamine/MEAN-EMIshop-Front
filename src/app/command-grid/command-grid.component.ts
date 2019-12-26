@@ -13,7 +13,7 @@ export class CommandGridComponent implements OnInit {
   constructor(private commandService: CommandeService,private userService: UserService ,private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.commandService.getCommandsByUsers(this.userService.userConnected._id)
+    this.commandService.getCommandsByUsers(this.userService.userConnected._id);
   }
 
 }

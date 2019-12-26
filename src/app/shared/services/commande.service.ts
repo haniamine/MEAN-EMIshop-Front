@@ -12,7 +12,7 @@ export class CommandeService {
   commands: Commande[];
   product: Product;
 
-  readonly baseURL = "http://localhost:3000/api/command";
+  readonly baseURL = 'http://localhost:3000/api/command';
 
 
   constructor(private http: HttpClient) { }
@@ -37,7 +37,7 @@ export class CommandeService {
       .get(this.baseURL+`/${id}`)
       .toPromise()
       .then(res => (this.selectedCommand = res as Commande));
-
+    console.log(this.selectedCommand);
   }
 
   getProduct(id:string):Product{

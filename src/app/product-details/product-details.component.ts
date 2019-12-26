@@ -34,4 +34,11 @@ export class ProductDetailsComponent implements OnInit {
   onSelect(){
     this.panierService.add(this.productService.selectedItem);
   }
+  onDelete(id: string) {
+    if (confirm("Are you sure to delete this record?")) {
+      this.productService.deleteProduct(id).subscribe(res => {
+        this.productService.getAll();
+      });
+    }
+  }
 }
